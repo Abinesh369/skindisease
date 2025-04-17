@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skin Disease Prediction - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url("{{ url_for('static', filename='login_bg.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.849);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            color: rgb(7, 4, 4);
+            text-align: center;
+        }
+
+        .login-container h3 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ff416c;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-control {
+            background: rgba(7, 3, 3, 0.2);
+            border: none;
+            padding: 10px;
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .btn-submit {
+            background: #ff416c;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn-submit:hover {
+            background: #ff4b2b;
+            box-shadow: 0 0 10px rgba(255, 75, 43, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h3>Login</h3>      
+        <form action="/validate" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter username" name="uname" required>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" placeholder="Enter password" name="upass" required>
+            </div>
+            <button type="submit" class="btn btn-submit">Login</button>
+        </form>
+        <p>{{ msg }}</p>
+    </div>
+
+</body>
+</html>
